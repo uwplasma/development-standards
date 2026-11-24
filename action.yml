@@ -1,0 +1,11 @@
+name: UWPlasma policy
+description: Check a pull request against UWPlasma contribution standards
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        POLICY_DIR: ${{ github.action_path }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      run: python3 -I "$POLICY_DIR/check.py" "$BASE_SHA" "$HEAD_SHA" --event "$GITHUB_EVENT_PATH"

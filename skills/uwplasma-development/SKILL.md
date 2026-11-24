@@ -1,0 +1,13 @@
+---
+name: uwplasma-development
+description: Apply UWPlasma contribution standards when planning, implementing, profiling, or reviewing changes to UWPlasma software. Covers owners, scientific evidence, JAX derivatives, public examples, and CI.
+---
+
+# Working on UWPlasma
+
+1. Identify the owner, target branch and claim. Read the repository instructions, README, supported interfaces, relevant sources and tests. Inspect the branch history, open PRs, stacked dependencies, previous benchmarks and downstream callers before proposing new work. Reuse a concurrent fix where possible.
+2. Do your own investigation for each task. Identify what could falsify the proposed explanation. Consult the relevant primary sources and independent implementations. For infrastructure work this can mean upstream documentation and an actual failing job. For scientific changes, follow [Scientific evidence](references/science.md). State what you read, ran and learned.
+3. Choose the smallest coherent change that delivers the result. Prefer deleting a duplicate solver or reusing a tested interface. Count changed files and lines, including deletions. Preserve clarity, capability, numerical accuracy and public behavior when simplifying. Ask before a wholesale rewrite.
+4. Confirm whether the owner wants you to use the available GitHub CLI to prepare commits and push a topic branch, and confirm the authorized identity. Reuse authorization already given for the same scope. Without it, prepare a local patch. Give the human contributor the branch comparison link and concise proposed PR text. The contributor opens the PR from their own account. A human owner reviews and merges. Merging, enabling auto-merge, pushing to main and force-pushing each require explicit instructions. An approved rewrite must be limited to small wording changes or an agreed slimming or refactoring effort. Preserve contributor work. Routine updates use ordinary commits.
+5. Keep equilibrium files on the machines, including when compressed or tracked through LFS. Use a fixture identifier, provenance, checksum and reproduction instructions. Inspect staged files and branch history before the first push. Avoid generated outputs and unnecessary notebooks, tables and binaries. Follow [Public interfaces and CI](references/interfaces-and-ci.md).
+6. Report the baseline, candidate, conditions and remaining limits in the PR. Say which tests passed, which failed and which were unavailable. Give the measured value and required threshold for a failed gate. Keep the gate and hardware fixed. Record genuine contributors, upstream licenses and citations. Omit tool signatures, generated-by footers and model co-author trailers. Preserve the actual commit authors.
